@@ -17,6 +17,13 @@
     rgba(252, 70, 107, 1) 100%
   );
 }
+.card-white {
+  width: 400px;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  background-color: #fff;
+}
 
 .title {
   text-align: center;
