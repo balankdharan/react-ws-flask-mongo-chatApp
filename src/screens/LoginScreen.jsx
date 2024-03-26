@@ -1,13 +1,22 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
+import { useNavigate } from "react-router-dom";
 
+import UseContext from "../hooks/UseContext";
 // create it like the fight club code
+import { getItem, setItem } from "../utility/LocalStore";
 
 const LoginScreen = () => {
   const [input, setInput] = useState("");
+  const { setUserId } = useContext(UseContext);
+  const navigate = useNavigate();
 
   const handleSendMessage = (e) => {
     e.preventDefault();
     console.log("Received message");
+    setItem("wsId", input);
+    const idAccess = getItem("wsId");
+    setUserId(idAccess);
+    navigate("/chat");
   };
   return (
     <div

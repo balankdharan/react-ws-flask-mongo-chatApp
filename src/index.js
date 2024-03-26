@@ -12,12 +12,16 @@ import {
 import LoginScreen from "./screens/LoginScreen.jsx";
 import HomeScreen from "./screens/HomeScreen.jsx";
 import SignupScreen from "./screens/SignupScreen.jsx";
+import PrivateRoute from "./components/PrivateRoute.jsx";
+
 const router = createBrowserRouter(
   createRoutesFromElements(
     <Route path="/" element={<App />}>
       <Route index={true} path="/" element={<LoginScreen />} />
       <Route path="/signup" element={<SignupScreen />} />
-      <Route path="/chat" element={<HomeScreen />} />
+      <Route path="" element={<PrivateRoute />}>
+        <Route path="/chat" element={<HomeScreen />} />
+      </Route>
     </Route>
   )
 );
