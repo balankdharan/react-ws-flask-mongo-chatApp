@@ -37,6 +37,14 @@ const LoginScreen = () => {
             onChange={(e) => setInput(e.target.value)}
           />
         </div>
+        <div className="input-container">
+          <input
+            className="input"
+            type="text"
+            value={input}
+            onChange={(e) => setInput(e.target.value)}
+          />
+        </div>
         <div>
           <button
             className="button"
